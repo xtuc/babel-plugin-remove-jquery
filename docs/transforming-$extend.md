@@ -15,6 +15,15 @@ visitor: {
 
 ## 2 step: ensure that the `CallExpression` is `$.extend`
 
+Input:
+
+```js
+$.extend({}, objA, objB);
+^ ^^^^^^
+```
+
+Visitor:
+
 ```js
 const { callee, arguments: args } = path.node;
 
@@ -36,6 +45,8 @@ In order to actually extend two objects we are going to inject a helper function
 
 The `@babel/template` package provide a way to manage code snippets as a template.
 
+Visitor:
+
 ```js
 const extendHelper = defineHelper(`
   var ID = function(out) {
@@ -48,6 +59,19 @@ const extendHelper = defineHelper(`
 In the template we will renamed the `ID` identifier, you can have the processed template by running: `extendHelper({ ID: … });`.
 
 ## 4 step: injecting the `extend` helper
+
+Diff:
+
+```diff
++var _extend = function (out) {
++  // …
++  return out;
++};
+
+$.extend({}, objA, objB);
+```
+
+Visitor:
 
 ```js
 // Generate a safe identifier by looking to the current scope
@@ -65,6 +89,20 @@ path.insertBefore([helper]);
 Now that we have our helper in the scope, we need to change the call to `$.extend` to actually use it.
 
 For simplicity we can override the entire `callee` object with an identifier.
+
+Diff:
+
+```diff
+var _extend = function (out) {
+  // …
+  return out;
+};
+
+-$.extend({}, objA, objB);
++_extend({}, objA, objB);
+```
+
+Visitor:
 
 ```js
 path.node.callee = helperId;
