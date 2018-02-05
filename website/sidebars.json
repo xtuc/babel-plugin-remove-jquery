@@ -1,0 +1,10 @@
+{
+  "docs": {
+    "Documentation": ["index"],
+    "Transformations": [
+      "transformation-$each",
+      "transformation-$extend",
+      "transformation-$now"
+    ]
+  }
+}
