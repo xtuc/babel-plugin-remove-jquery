@@ -13,7 +13,7 @@ const siteConfig = {
   },
   copyright: 'Sven Sauleau',
   highlight: {
-    theme: 'default',
+    theme: 'github-gist',
   },
   scripts: [],
   // You may provide arbitrary config keys to be used as needed by your template.

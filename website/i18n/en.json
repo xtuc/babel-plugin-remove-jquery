@@ -5,11 +5,12 @@
     "previous": "Previous",
     "tagline": "Get rid of your jQuery!",
     "index": "Documentation",
-    "transformation-$each": "Transformation $.each",
-    "transformation-$extend": "Transformation $.extend",
-    "transformation-$now": "Transformation $.now",
+    "transformations": "Transformations",
+    "transforming-$each": "Transforming $.each",
+    "transforming-$extend": "Transforming $.extend",
+    "transforming-$now": "Transforming $.now",
     "Documentation": "Documentation",
-    "Transformations": "Transformations"
+    "How it works": "How it works"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",

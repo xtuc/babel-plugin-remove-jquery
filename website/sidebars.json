@@ -1,10 +1,13 @@
 {
   "docs": {
-    "Documentation": ["index"],
-    "Transformations": [
-      "transformation-$each",
-      "transformation-$extend",
-      "transformation-$now"
+    "Documentation": [
+      "index",
+      "transformations"
+    ],
+    "How it works": [
+      "transforming-$each",
+      "transforming-$extend",
+      "transforming-$now"
     ]
   }
 }
