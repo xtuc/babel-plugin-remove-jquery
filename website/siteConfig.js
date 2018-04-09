@@ -6,6 +6,10 @@ const siteConfig = {
   projectName: 'babel-plugin-remove-jquery',
   headerLinks: [
     {doc: 'index', label: 'Documentation'},
+    {
+      href: "https://github.com/xtuc/babel-plugin-remove-jquery",
+      label: "Sources"
+    }
   ],
   colors: {
     primaryColor: '#2E8555',
