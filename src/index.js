@@ -2,6 +2,7 @@ const transformations = [
   require('./transformations/$.each'),
   require('./transformations/$.extend'),
   require('./transformations/$.now'),
+  require('./transformations/$.hide'),
 ];
 
 module.exports = mergePlugins(transformations);
